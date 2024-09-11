@@ -1,5 +1,7 @@
 # TinyAgent: Function Calling at the Edge
 
+<details>
+  <summary>Click to open the initial README </summary>
 <p align="center">
 <a href="https://github.com/SqueezeAILab/TinyAgent/raw/main/TinyAgent.zip">Get the desktop app</a>‎ ‎ 
   |‎ ‎ 
@@ -8,7 +10,13 @@
 
 ![Thumbnail](figs/tinyagent.png)
 
-TinyAgent aims to enable complex reasoning and function calling capabilities in Small Language Models (SLMs) that can be deployed securely and privately at the edge. Traditional Large Language Models (LLMs) like GPT-4 and Gemini-1.5, while powerful, are often too large and resource-intensive for edge deployment, posing challenges in terms of privacy, connectivity, and latency. TinyAgent addresses these challenges by training specialized SLMs with high-quality, curated data, and focusing on function calling with [LLMCompiler](https://github.com/SqueezeAILab/LLMCompiler). As a driving application, TinyAgent can interact with various MacOS applications, assisting users with day-to-day tasks such as composing emails, managing contacts, scheduling calendar events, and organizing Zoom meetings.
+TinyAgent aims to enable complex reasoning and function calling capabilities in Small Language Models (SLMs) that can be
+deployed securely and privately at the edge. Traditional Large Language Models (LLMs) like GPT-4 and Gemini-1.5, while
+powerful, are often too large and resource-intensive for edge deployment, posing challenges in terms of privacy,
+connectivity, and latency. TinyAgent addresses these challenges by training specialized SLMs with high-quality, curated
+data, and focusing on function calling with [LLMCompiler](https://github.com/SqueezeAILab/LLMCompiler). As a driving
+application, TinyAgent can interact with various macOS applications, helping users with day-to-day tasks such as
+composing emails, managing contacts, scheduling calendar events, and organizing Zoom meetings.
 
 ## Demo
 
@@ -23,14 +31,14 @@ TinyAgent is equipped with 16 different functions that can interact with differe
 ### 📧 Mail
 
 - **Compose New Email**
-  - Start a new email with options for adding recipients and attachments.
-  - _Example Query:_ “Email Sid and Nick about the meeting with attachment project.pdf.”
+    - Start a new email with options for adding recipients and attachments.
+    - _Example Query:_ “Email Sid and Nick about the meeting with attachment project.pdf.”
 - **Reply to Emails**
-  - Respond to received emails, optionally adding new recipients and attachments.
-  - _Example Query:_ “Reply to Alice's email with the updated budget document attached.”
+    - Respond to received emails, optionally adding new recipients and attachments.
+    - _Example Query:_ “Reply to Alice's email with the updated budget document attached.”
 - **Forward Emails**
-  - Forward an existing email to other contacts, including additional attachments if necessary.
-  - _Example Query:_ “Forward the project briefing to the marketing team.”
+    - Forward an existing email to other contacts, including additional attachments if necessary.
+    - _Example Query:_ “Forward the project briefing to the marketing team.”
 
 ### 📇 Contacts
 
@@ -60,11 +68,11 @@ TinyAgent is equipped with 16 different functions that can interact with differe
 ### 🗂️ File Management
 
 - **File Reading**
-  - Open and read files directly through TinyAgent.
-  - _Example Query:_ “Open the LLM Compiler.pdf.”
+    - Open and read files directly through TinyAgent.
+    - _Example Query:_ “Open the LLM Compiler.pdf.”
 - **PDF Summarization**
-  - Generate summaries of PDF documents, enhancing content digestion and review efficiency.
-  - _Example Query:_ “Summarize the document LLM Compiler.pdf and save the summary in my Documents folder.”
+    - Generate summaries of PDF documents, enhancing content digestion and review efficiency.
+    - _Example Query:_ “Summarize the document LLM Compiler.pdf and save the summary in my Documents folder.”
 
 ### ⏰ Reminders
 
@@ -85,19 +93,30 @@ TinyAgent is equipped with 16 different functions that can interact with differe
 
 ### 🤖 Sub-Agents
 
-Depending on the task simplicity, TinyAgent orchestrates the execution of different more specialized or smaller LMs. TinyAgent currently can operate LMs that can summarize a PDF, write emails, or take notes.
+Depending on the task simplicity, TinyAgent orchestrates the execution of different more specialized or smaller LMs.
+TinyAgent currently can operate LMs that can summarize a PDF, write emails, or take notes.
 
 > See the [Customization](#customization) section to see how to add your own sub-agentx.
 
 ### 🛠️ ToolRAG
 
-When faced with challenging tasks, SLM agents require appropriate tools and in-context examples to guide them. If the model sees irrelevant examples, it can hallucinate. Likewise, if the model sees the descriptions of the tools that it doesn’t need, it usually gets confused, and these tools take up unnecessary prompt space. To tackle this, TinyAgent uses ToolRAG to retrieve the best tools and examples suited for a given query. This process has minimal latency and increases the accuracy of TinyAgent substantially. Please take a look at our [blog post](https://bair.berkeley.edu/blog/2024/05/29/tiny-agent) and our [ToolRAG model](https://huggingface.co/squeeze-ai-lab/TinyAgent-ToolRAG) for more details.
+When faced with challenging tasks, SLM agents require appropriate tools and in-context examples to guide them. If the
+model sees irrelevant examples, it can hallucinate. Likewise, if the model sees the descriptions of the tools that it
+doesn’t need, it usually gets confused, and these tools take up unnecessary prompt space. To tackle this, TinyAgent uses
+ToolRAG to retrieve the best tools and examples suited for a given query. This process has minimal latency and increases
+the accuracy of TinyAgent substantially. Please take a look at
+our [blog post](https://bair.berkeley.edu/blog/2024/05/29/tiny-agent) and
+our [ToolRAG model](https://huggingface.co/squeeze-ai-lab/TinyAgent-ToolRAG) for more details.
 
-> You need to first install our [ToolRAG model](https://huggingface.co/squeeze-ai-lab/TinyAgent-ToolRAG) from Hugging Face and enable it from the TinyAgent settings to use it.  
+> You need to first install our [ToolRAG model](https://huggingface.co/squeeze-ai-lab/TinyAgent-ToolRAG) from Hugging
+> Face and enable it from the TinyAgent settings to use it.
 
 ### 🎙️ Whisper
 
-TinyAgent also accepts voice commands through both the OpenAI Whisper API and local [whisper.cpp](https://github.com/ggerganov/whisper.cpp) deployment. For whisper.cpp, you need to setup the [local whisper server](https://github.com/ggerganov/whisper.cpp/tree/master/examples/server) and provide the server port number in the TinyAgent settings.
+TinyAgent also accepts voice commands through both the OpenAI Whisper API and
+local [whisper.cpp](https://github.com/ggerganov/whisper.cpp) deployment. For whisper.cpp, you need to setup
+the [local whisper server](https://github.com/ggerganov/whisper.cpp/tree/master/examples/server) and provide the server
+port number in the TinyAgent settings.
 
 ## Providers
 
@@ -109,24 +128,34 @@ You need to provide OpenAI API Key and the models you want to use in the 'Prefer
 
 ### Azure Deployments
 
-You need to provide your deployment name and the endpoints for the main agent/sub-agents/embedding model as well as the context length of the agent models in the 'Preferences' window.
+You need to provide your deployment name and the endpoints for the main agent/sub-agents/embedding model as well as the
+context length of the agent models in the 'Preferences' window.
 
 ### Local Models
 
-You can plug-and-play every part of TinyAgent with your local models! TinyAgent can use an OpenAI-compatible server to run models locally. There are several options you can take:
+You can plug-and-play every part of TinyAgent with your local models! TinyAgent can use an OpenAI-compatible server to
+run models locally. There are several options you can take:
 
-- **[LMStudio](https://lmstudio.ai/) :** For models already on Huggingface, LMStudio provides an easy-to-use to interface to get started with locally served models.
+- **[LMStudio](https://lmstudio.ai/) :** For models already on Huggingface, LMStudio provides an easy-to-use to
+  interface to get started with locally served models.
 
-- **[llama.cpp server](https://github.com/ggerganov/llama.cpp/blob/master/examples/server/README.md):** However, if you want more control over your models, we recommend using the official llama.cpp server to get started. Please read through the tagged documentation to get started with it.
+- **[llama.cpp server](https://github.com/ggerganov/llama.cpp/blob/master/examples/server/README.md):** However, if you
+  want more control over your models, we recommend using the official llama.cpp server to get started. Please read
+  through the tagged documentation to get started with it.
 
 > All TinyAgent needs is the port numbers that you are serving your model at and its context length.
 
 ## Fine-tuned TinyAgents
 
-We also provide our own fine-tuned open source models, TinyAgent-1.1B and TinyAgent-7B! We curated a [dataset](https://huggingface.co/datasets/squeeze-ai-lab/TinyAgent-dataset) of 40000 real-life use cases for TinyAgent and fine-tuned two small open-source language models on this dataset with LoRA. After fine-tuning and using ToolRAG, both TinyAgent-1.1B and TinyAgent-7B exceed the performance of GPT-4-turbo. Check out our for the specifics of dataset generation, evaluation, and fine-tuning.
+We also provide our own fine-tuned open source models, TinyAgent-1.1B and TinyAgent-7B! We curated
+a [dataset](https://huggingface.co/datasets/squeeze-ai-lab/TinyAgent-dataset) of 40.000 real-life use cases for
+TinyAgent
+and fine-tuned two small open-source language models on this dataset with LoRA. After fine-tuning and using ToolRAG,
+both TinyAgent-1.1B and TinyAgent-7B exceed the performance of GPT-4-turbo. Check out our for the specifics of dataset
+generation, evaluation, and fine-tuning.
 
 | Model                                                                                                                                                       | Success Rate |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
 | GPT-3.5-turbo                                                                                                                                               | 65.04%       |
 | GPT-4-turbo                                                                                                                                                 | 79.08%       |
 | [TinyLLama-1.1B-32K-Instruct](https://huggingface.co/Doctor-Shotgun/TinyLlama-1.1B-32k-Instruct)                                                            | 12.71%       |
@@ -136,7 +165,8 @@ We also provide our own fine-tuned open source models, TinyAgent-1.1B and TinyAg
 
 ## Customization
 
-You can customize your TinyAgent by going to `~/Library/Application Support/TinyAgent/tinyagent-llmcompiler` directory and changing the code yourself.
+You can customize your TinyAgent by going to `~/Library/Application Support/TinyAgent/tinyagent-llmcompiler` directory
+and changing the code yourself.
 
 ### Using TinyAgent programmatically
 
@@ -159,7 +189,9 @@ await TinyAgent.arun(query="Create a meeting with Sid and Lutfi for tomorrow 2pm
 
 ```python
 class TinyAgentToolName(Enum):
-...
+    ...
+
+
 CUSTOM_TOOL_NAME = "custom_tool"
 ```
 
@@ -167,38 +199,45 @@ CUSTOM_TOOL_NAME = "custom_tool"
 
 ```python
 def get_custom_tool(...) -> list[Tool]:
-async def tool_coroutine(...) -> str: # Needs to return a string
-...
+    async def tool_coroutine(...) -> str:  # Needs to return a string
+
+    ...
+
+
 return ...
 
-    custom_tool = Tool(
-        name=TinyAgentToolName.CUSTOM_TOOL_NAME,
-        func=tool_coroutine,
-        description=(
-            f"{TinyAgentToolName.CUSTOM_TOOL_NAME.value}(...) -> str\n"
-            "<The description of the tool>"
-        )
+custom_tool = Tool(
+    name=TinyAgentToolName.CUSTOM_TOOL_NAME,
+    func=tool_coroutine,
+    description=(
+        f"{TinyAgentToolName.CUSTOM_TOOL_NAME.value}(...) -> str\n"
+        "<The description of the tool>"
     )
+)
 
-    return [custom_tool]
+return [custom_tool]
 ```
 
 3. Add your tools to the `get_tiny_agent_tools` function.
 
 ```python
 def get_tiny_agent_tools(...):
-...
+    ...
+
+
 tools += get_custom_tools(...)
 ...
 ```
 
-> Note: Adding your own tools only works for GPT models since our open-source models and ToolRAG were only fine-tuned on the original TinyAgent toolset.
+> Note: Adding your own tools only works for GPT models since our open-source models and ToolRAG were only fine-tuned on
+> the original TinyAgent toolset.
 
 ### Adding your own sub-agents
 
 You can also add your own custom subagents. To do so, please follow these steps:
 
-1. All sub-agents inherit from `SubAgent` class in `src/tiny_agent/sub_agents/sub_agent.py`. Your custom agent should inherit from this abstract class and define the `__call__` method.
+1. All sub-agents inherit from `SubAgent` class in `src/tiny_agent/sub_agents/sub_agent.py`. Your custom agent should
+   inherit from this abstract class and define the `__call__` method.
 
 ```python
 class CustomSubAgent(SubAgent):
@@ -213,23 +252,29 @@ class CustomSubAgent(SubAgent):
 ```python
 from src.tiny_agent.sub_agents.custom_agent import CustomAgent
 
+
 class TinyAgent:
-...
+    ...
+
+
 custom_agent: CustomAgent
 
-    def __init__(...):
-        ...
-        self.custom_agent = CustomAgent(
-            sub_agent_llm, config.sub_agent_config, config.custom_instructions
-        )
-        ...
+
+def __init__(...):
+    ...
+    self.custom_agent = CustomAgent(
+        sub_agent_llm, config.sub_agent_config, config.custom_instructions
+    )
+    ...
 ```
 
-3. After defining your custom agent and adding it to TinyAgent, you should create a tool that calls this agent. Please refer to the [Adding your own tools](#adding-your-own-tools) section to see how to do so
+3. After defining your custom agent and adding it to TinyAgent, you should create a tool that calls this agent. Please
+   refer to the [Adding your own tools](#adding-your-own-tools) section to see how to do so
 
 ## Citation
 
-We would appreciate it if you could please cite our [blog post](https://bair.berkeley.edu/blog/2024/05/29/tiny-agent/) if you found TinyAgent useful for your work:
+We would appreciate it if you could please cite our [blog post](https://bair.berkeley.edu/blog/2024/05/29/tiny-agent/)
+if you found TinyAgent useful for your work:
 
 ```
 @misc{tiny-agent,
@@ -239,3 +284,48 @@ We would appreciate it if you could please cite our [blog post](https://bair.ber
   year={2024}
 }
 ```
+
+</details>
+
+## Quick Start
+
+### Environment Setup
+
+As a Python environment Poetry is used. To create a new environment use the `poetry shell` command. Once the virtual
+environment is started, install all the necessary dependencies using the `poetry install command`.
+
+### Declare Environmental Variables
+
+To use OpenAI models please specify `OPENAI_API_KEY` in the `.env` file in the root of the repository. To use
+Open-Source models you should additionally specify  `HF_TOKEN` in the `.env` file. Example of the `.env` file
+is [.env-sample](.env-sample) and located in the root of the repository.
+
+Also, the keys for OpenAI API or HuggingFace API should be specified in the
+configs ([config_mistral.json](llm_configs/config_mistral.json) or [config_openai.json](llm_configs/config_openai.json)).
+
+#### Possible Problems
+
+If you encountered with the following problem:
+
+```yaml
+UnboundLocalError: local variable 'llm_response' referenced before assignment
+```
+
+Most likely that you didn't specify the key in the configuration file.
+
+### Setup Local LLM Server
+
+To use an agent fully, locally you have to set up a dedicated LLM server. The easiest way to do that is to
+use [LM Studio](https://lmstudio.ai/) or [vllm](https://github.com/vllm-project/vllm) (TODO)
+
+### Run the Agent Programmatically
+
+Once you have installed all the necessary dependencies, declared environmental variables and started the local server,
+you can finally use the agent.
+To run an agent programmatically, run the [run_programmatically.py](run_programmatically.py) script using poetry:
+
+```bash
+ poetry run python3 run_programmatically.py
+  ```
+
+During the first start, an agent will ask you for a permission to the internal directories or macOS applications.

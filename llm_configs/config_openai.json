@@ -1,0 +1,65 @@
+{
+  "smsEnabled": false,
+  "provider": "openai",
+  "activationKeyboardShortcut": {
+    "key": {
+      "keyCode": 49
+    },
+    "modifiers": [
+      "option"
+    ],
+    "events": [
+      "keyDown"
+    ]
+  },
+  "toolRAGProvider": "openai",
+  "whisperProvider": "openai",
+  "localEmbeddingModelName": "",
+  "azureEndpoint": "",
+  "localModelName": "mistralai\/Mistral-7B-Instruct-v0.2",
+  "azureSubAgentDeploymentName": "",
+  "searchBarFont": {
+    "size": 22,
+    "name": "Menlo"
+  },
+  "maximumWidth": 600,
+  "zoomEnabled": false,
+  "localSubAgentModelName": "mistralai\/Mistral-7B-Instruct-v0.2",
+  "localTokenizerNameOrPath": "mistralai\/Mistral-7B-Instruct-v0.2",
+  "openAIEmbeddingModelName": "text-embedding-3-small",
+  "customInstructions": "",
+  "subAgentProvider": "openai",
+  "localEmbeddingCtxLen": "",
+  "azureSubAgentCtxLen": "",
+  "localEmbeddingPort": "",
+  "azureDeploymentName": "",
+  "localSubAgentCtxLen": "2048",
+  "zoomAccessToken": "",
+  "backgroundColor": "#E3E4EC",
+  "mapsEnabled": true,
+  "maximumHeight": 300,
+  "filesEnabled": true,
+  "remindersEnabled": true,
+  "textColor": "#5C5C5A",
+  "openAIApiKey": "OPENAI_API_TOKEN",
+  "localWhisperPort": "",
+  "azureCtxLen": "",
+  "openAISubAgentModelName": "gpt-3.5-turbo",
+  "searchBarHeight": 50,
+  "azureApiVersion": "",
+  "azureApiKey": "",
+  "localPort": "1234",
+  "localSubAgentPort": "1234",
+  "contactsEnabled": true,
+  "calendarEnabled": true,
+  "localSubAgentTokenizerNameOrPath": "mistralai\/Mistral-7B-Instruct-v0.2",
+  "localCtxLen": "2048",
+  "hfToken": "HF_TOKEN",
+  "openAIModelName": "gpt-4-1106-preview",
+  "mailEnabled": true,
+  "useToolRAG": true,
+  "azureEmbeddingDeploymentName": "",
+  "useSameProviderForSubAgents": true,
+  "notesEnabled": true,
+  "insertionPointColor": "#525250"
+}

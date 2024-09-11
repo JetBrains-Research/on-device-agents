@@ -10,12 +10,13 @@ load_dotenv()
 
 
 async def main():
-    config_path = Path.cwd() / "config.json"
+    config_path = Path.cwd() / "llm_configs/" / "config_openai.json"
 
     tiny_agent_config = get_tiny_agent_config(config_path=str(config_path))
     tiny_agent = TinyAgent(tiny_agent_config)
     await tiny_agent.arun(
-        query="How to get to the KIT Uni from my place? " " Write the result into the notes with detailed route."
+        query="Write a notes with the Carbonara recipe "
+              " and then write the route how to get to the origin of Spaghetti Carbonara."
     )
 
 
