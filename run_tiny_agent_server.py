@@ -4,7 +4,7 @@ import signal
 from http import HTTPStatus
 from typing import cast
 
-from fastapi import FastAPI, HTTPException, Request, Response
+from fastapi import FastAPI, Request, Response
 from fastapi.exceptions import HTTPException
 from fastapi.responses import PlainTextResponse, StreamingResponse
 from pydantic import BaseModel
@@ -70,9 +70,7 @@ async def execute_command(request: TinyAgentRequest) -> StreamingResponse:
     query = request.query
 
     if not query or len(query) <= 0:
-        raise HTTPException(
-            status_code=HTTPStatus.BAD_REQUEST, detail="No query provided"
-        )
+        raise HTTPException(status_code=HTTPStatus.BAD_REQUEST, detail="No query provided")
 
     try:
         tiny_agent_config = get_tiny_agent_config(config_path=CONFIG_PATH)
@@ -135,13 +133,9 @@ async def get_voice_transcription(request: Request) -> Response:
     raw_bytes = await audio_file.read()
 
     if not raw_bytes or len(raw_bytes) <= 0:
-        raise HTTPException(
-            status_code=HTTPStatus.BAD_REQUEST, detail="No audio provided"
-        )
+        raise HTTPException(status_code=HTTPStatus.BAD_REQUEST, detail="No audio provided")
     if not sample_rate:
-        raise HTTPException(
-            status_code=HTTPStatus.BAD_REQUEST, detail="No sampling rate provided"
-        )
+        raise HTTPException(status_code=HTTPStatus.BAD_REQUEST, detail="No sampling rate provided")
 
     try:
         tiny_agent_config = get_tiny_agent_config(config_path=CONFIG_PATH)

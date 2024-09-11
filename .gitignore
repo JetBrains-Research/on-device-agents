@@ -178,3 +178,5 @@ docs/docs_skeleton/yarn.lock
 project.xcworkspace/
 xcuserdata/
 *.pyc
+
+TinyAgent.app/
